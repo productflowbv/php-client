@@ -1,0 +1,28 @@
+{
+  "name": "productflowbv/php-client",
+  "description": "PHP Client for ProductFlow API.",
+  "type": "library",
+  "require": {
+    "guzzlehttp/guzzle": "^6.2.2",
+    "php": ">=7.0.0",
+    "ext-json": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeroen Visser",
+      "email": "jeroen@productflow.com",
+      "homepage": "https://www.productflow.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProductFlow\\API\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
