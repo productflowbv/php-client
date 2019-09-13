@@ -4,7 +4,7 @@
   "type": "library",
   "require": {
     "guzzlehttp/guzzle": "^6.2.2",
-    "php": ">=5.5",
+    "php": "^7.1",
     "ext-json": "*"
   },
   "license": "MIT",
