@@ -10,7 +10,7 @@ class Client
     /**
      * @var string
      */
-    protected $baseUrl = 'http://cloud.productflow.com/api/v1/';
+    protected $baseUrl = 'https://cloud.productflow.com/api/v1/';
 
     /**
      * @var GuzzleClient
