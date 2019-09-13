@@ -2,11 +2,13 @@
 
 namespace ProductFlow\API;
 
+use ProductFlow\API\Resources\Cancel;
 use ProductFlow\API\Resources\Language;
 use ProductFlow\API\Resources\Marketplace;
 use ProductFlow\API\Resources\Offer;
 use ProductFlow\API\Resources\Order;
 use ProductFlow\API\Resources\Product;
+use ProductFlow\API\Resources\Shipment;
 
 class ProductFlow
 {
@@ -63,5 +65,21 @@ class ProductFlow
     public function order()
     {
         return new Order($this->client);
+    }
+
+    /**
+     * @return Cancel
+     */
+    public function cancel()
+    {
+        return new Cancel();
+    }
+
+    /**
+     * @return Shipment
+     */
+    public function shipment()
+    {
+        return new Shipment();
     }
 }
