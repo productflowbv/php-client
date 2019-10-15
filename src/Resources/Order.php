@@ -28,6 +28,6 @@ class Order extends Resource
      */
     public function accept($identifier)
     {
-        return $this->client->request('PUT', "order/{$identifier}");
+        return $this->client->request('PUT', "order/{$identifier}/accept");
     }
 }
