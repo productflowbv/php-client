@@ -72,7 +72,7 @@ class ProductFlow
      */
     public function cancel()
     {
-        return new Cancel();
+        return new Cancel($this->client);
     }
 
     /**
@@ -80,6 +80,6 @@ class ProductFlow
      */
     public function shipment()
     {
-        return new Shipment();
+        return new Shipment($this->client);
     }
 }
