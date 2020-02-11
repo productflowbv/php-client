@@ -9,6 +9,7 @@ use ProductFlow\API\Resources\Offer;
 use ProductFlow\API\Resources\Order;
 use ProductFlow\API\Resources\Product;
 use ProductFlow\API\Resources\Shipment;
+use ProductFlow\API\Resources\Webhook;
 
 class ProductFlow
 {
@@ -81,5 +82,13 @@ class ProductFlow
     public function shipment()
     {
         return new Shipment($this->client);
+    }
+
+    /**
+     * @return Webhook
+     */
+    public function webhook()
+    {
+        return new Webhook($this->client);
     }
 }
