@@ -15,7 +15,7 @@ $productFlow = new \ProductFlow\API\ProductFlow($client);
 ## Products
 ### Get a paginated list of products
 ```php
-$products = $productFlow->product($locale)->list();
+$products = $productFlow->product($locale)->setPage(1)->list();
 ```
 
 ### Get a single product
@@ -36,7 +36,7 @@ $productFlow->product($locale)->delete($sku);
 ## Orders
 ### Get a paginated list of open orders
 ```php
-$orders = $productFlow->order()->list(['open']);
+$orders = $productFlow->order()->setPage(1)->list(['open']);
 ```
 
 ### Get a single order

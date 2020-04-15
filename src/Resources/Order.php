@@ -10,7 +10,7 @@ class Order extends Resource
      */
     public function list(array $status = [])
     {
-        return $this->client->request('GET', 'order', ['query' => ['status' => $status]]);
+        return $this->client->request('GET', 'order', ['query' => ['status' => $status, 'page' => $this->getPage()]]);
     }
 
     /**
