@@ -77,10 +77,16 @@ $productFlow->offer()->show($sku);
 $productFlow->offer()->upsert($sku, [
     'title' => 'Awesome product',
     'qty_available' => 2,
+    'proposition' => 'Fast delivery',
     'prices' => [
-        'EUR' => 19.95        
-    ],
-    'proposition' => 'Fast delivery'
+        'EUR' => [
+            'sell_price' => 19.95,
+            'base_price' => 24.95,
+            'suggested_retail_price' => 29.95,
+            'purchase_price' => 9.25,
+            'cost_price' => 4.50
+        ]        
+    ]
 ]);
 ```
 
