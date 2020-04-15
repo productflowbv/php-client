@@ -60,7 +60,7 @@ $productFlow->shipment()->create($identifier, [
 
 ### Add cancelation for an order
 ```php
-$productFlow->cancel()->create($identifier, []]);
+$productFlow->cancel()->create($identifier, []);
 ```
 
 ## Offers
