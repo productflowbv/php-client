@@ -64,6 +64,14 @@ $productFlow->cancel()->create($identifier, []);
 ```
 
 ## Offers
+### Get a paginated list of offers
+```php
+$productFlow->offer()->setPage(1)->list();
+```
+### Get a single offer
+```php
+$productFlow->offer()->show($sku);
+```
 ### Create or update an product offer
 ```php
 $productFlow->offer()->upsert($sku, [

@@ -5,6 +5,14 @@ namespace ProductFlow\API\Resources;
 class Offer extends Resource
 {
     /**
+     * @return array
+     */
+    public function list()
+    {
+        return $this->client->request('GET', "offer",  ['query' => ['page' => $this->getPage()]]);
+    }
+
+    /**
      * @param  string  $sku
      * @return array
      */
