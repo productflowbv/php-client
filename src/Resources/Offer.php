@@ -8,7 +8,7 @@ class Offer extends Resource
      * @param  string  $sku
      * @return array
      */
-    public function list(string $sku)
+    public function show(string $sku)
     {
         return $this->client->request('GET', "product/$sku/offer");
     }
