@@ -14,7 +14,7 @@ class Product extends Resource
      */
     public function list()
     {
-        return $this->client->request('GET', "product", $this->getHeaders() + ['query' => ['page' => $this->getPage()]]);
+        return $this->client->request('GET', "product", $this->getHeaders() + ['query' => $this->getQuery()]);
     }
 
     /**
