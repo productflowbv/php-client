@@ -10,9 +10,7 @@ class Order extends Resource
      */
     public function list(array $status = [])
     {
-        $this->filter('status', 'in', $status);
-
-        return $this->client->request('GET', 'order', ['query' => $this->getQuery()]);
+        return $this->client->request('GET', 'order', ['query' => $this->getQuery() + ['status' => $status]]);
     }
 
     /**
