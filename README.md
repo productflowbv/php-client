@@ -58,9 +58,16 @@ $productFlow->shipment()->create($identifier, [
 ]);
 ```
 
-### Add cancelation for an order
+### Add cancellation for an order
 ```php
 $productFlow->cancel()->create($identifier, []);
+```
+
+### Add note for an order
+```php
+$productFlow->note()->create($identifier, [
+    'message' => 'Sample note for this order',
+]);
 ```
 
 ## Offers
