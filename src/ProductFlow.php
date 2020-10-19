@@ -5,6 +5,7 @@ namespace ProductFlow\API;
 use ProductFlow\API\Resources\Cancel;
 use ProductFlow\API\Resources\Language;
 use ProductFlow\API\Resources\Marketplace;
+use ProductFlow\API\Resources\Note;
 use ProductFlow\API\Resources\Offer;
 use ProductFlow\API\Resources\Order;
 use ProductFlow\API\Resources\Product;
@@ -20,6 +21,7 @@ class ProductFlow
 
     /**
      * ProductFlow constructor.
+     *
      * @param  Client  $client
      */
     public function __construct(Client $client)
@@ -45,6 +47,7 @@ class ProductFlow
 
     /**
      * @param  string  $locale
+     *
      * @return Product
      */
     public function product(string $locale)
@@ -82,6 +85,14 @@ class ProductFlow
     public function shipment()
     {
         return new Shipment($this->client);
+    }
+
+    /**
+     * @return Note
+     */
+    public function note()
+    {
+        return new Note($this->client);
     }
 
     /**
