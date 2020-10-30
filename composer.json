@@ -3,7 +3,7 @@
   "description": "PHP Client for ProductFlow API.",
   "type": "library",
   "require": {
-    "guzzlehttp/guzzle": "^6.2.2|^7.0.1",
+    "guzzlehttp/guzzle": "^6|^7",
     "php": "^7.1",
     "ext-json": "*"
   },
