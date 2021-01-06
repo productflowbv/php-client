@@ -35,10 +35,10 @@ class Client
     }
 
     /**
-     * @param $method
-     * @param $uri
+     * @param string $method
+     * @param string $uri
      * @param  array  $options
-     * @return array
+     * @return array|string Array if the response was JSON, raw response body otherwise.
      */
     public function request(string $method, string $uri, array $options = [])
     {
@@ -46,8 +46,13 @@ class Client
 
         $contents = $response->getBody()->getContents();
 
-        $array = json_decode($contents, true);
+        if ($response->getHeader('Content-Type') === 'application/json') {
+            $array = json_decode($contents, true);
 
-        return (array) $array;
+            return (array) $array;
+        }
+        else {
+            return $contents;
+        }
     }
 }

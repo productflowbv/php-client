@@ -30,4 +30,17 @@ class Order extends Resource
     {
         return $this->client->request('PUT', "order/{$identifier}/accept");
     }
+
+    /**
+     * @param $identifier
+     * @param bool $file True if you want to have the PDF file returned.
+     * @return array
+     */
+    public function picking($identifier, $file = false)
+    {
+        $options = $file ? ['headers' => ['accept' => 'application/pdf']] : [];
+
+        return $this->client->request('GET', "order/{$identifier}/picking", $options);
+    }
+
 }
