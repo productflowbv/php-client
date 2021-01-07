@@ -46,7 +46,9 @@ class Client
 
         $contents = $response->getBody()->getContents();
 
-        if ($response->getHeader('Content-Type') === 'application/json') {
+        // fallback to application/json as this is, apart from 1 call, the return type
+        $default = 'application/json';
+        if (($response->getHeader('Content-Type')[0] ?? $default)  === 'application/json') {
             $array = json_decode($contents, true);
 
             return (array) $array;
