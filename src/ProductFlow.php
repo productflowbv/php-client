@@ -11,6 +11,7 @@ use ProductFlow\API\Resources\Order;
 use ProductFlow\API\Resources\Product;
 use ProductFlow\API\Resources\Shipment;
 use ProductFlow\API\Resources\Webhook;
+use ProductFlow\API\Resources\MarketplaceOffer;
 
 class ProductFlow
 {
@@ -61,6 +62,14 @@ class ProductFlow
     public function offer()
     {
         return new Offer($this->client);
+    }
+
+    /**
+     * @return MarketplaceOffer
+     */
+    public function marketplaceOffer()
+    {
+        return new MarketplaceOffer($this->client);
     }
 
     /**
