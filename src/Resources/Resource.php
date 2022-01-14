@@ -17,6 +17,11 @@ abstract class Resource
     protected $page = 1;
 
     /**
+     * @var int
+     */
+    protected $per_page = 15;
+
+    /**
      * @var array
      */
     protected $sorts = [];
@@ -53,6 +58,23 @@ abstract class Resource
         return $this;
     }
 
+    /**
+     * @return int
+     */
+    public function getPerPage(): int
+    {
+        return $this->per_page;
+    }
+
+    /**
+     * @param int $per_page
+     * @return Resource
+     */
+    public function setPerPage(int $per_page)
+    {
+        $this->per_page = $per_page;
+        return $this;
+    }
 
     /**
      * @param string $column
@@ -90,6 +112,7 @@ abstract class Resource
         $query = $this->filters;
         $query['sort'] = array_values($this->sorts);
         $query['page'] = $this->getPage();
+        $query['per_page'] = $this->getPerPage();
         return $query;
     }
 }
