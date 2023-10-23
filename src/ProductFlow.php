@@ -5,6 +5,7 @@ namespace ProductFlow\API;
 use ProductFlow\API\Resources\Cancel;
 use ProductFlow\API\Resources\Language;
 use ProductFlow\API\Resources\Marketplace;
+use ProductFlow\API\Resources\MarketplaceOffer;
 use ProductFlow\API\Resources\Note;
 use ProductFlow\API\Resources\Offer;
 use ProductFlow\API\Resources\Order;
@@ -61,6 +62,14 @@ class ProductFlow
     public function offer()
     {
         return new Offer($this->client);
+    }
+
+    /**
+     * @return MarketplaceOffer
+     */
+    public function marketplaceOffer()
+    {
+        return new MarketplaceOffer($this->client);
     }
 
     /**
