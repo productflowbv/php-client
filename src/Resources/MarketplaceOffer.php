@@ -28,6 +28,6 @@ class MarketplaceOffer extends Resource
      */
     public function upsert(string $sku, array $attributes)
     {
-        return $this->client->request('POST', "product/$sku/offer", ['form_params' => $attributes]);
+        return $this->client->request('POST', "product/$sku/marketplace-offer", ['form_params' => $attributes]);
     }
 }
