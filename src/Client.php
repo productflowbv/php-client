@@ -4,6 +4,7 @@ namespace ProductFlow\API;
 
 use GuzzleHttp\Client as GuzzleClient;
 use ProductFlow\API\Exceptions\ProductFlowException;
+use Psr\Http\Client\ClientInterface;
 
 class Client
 {
@@ -32,6 +33,19 @@ class Client
                 'X-Company-Id' => $companyId
             ]
         ]);
+    }
+
+    /**
+     * Use own custom client. This can be useful for testing, additional logging, setting custom user agent etc.
+     *
+     * @param ClientInterface $client
+     * @return $this
+     */
+    public function useClient(ClientInterface $client) : self
+    {
+        $this->client = $client;
+
+        return $this;
     }
 
     /**
