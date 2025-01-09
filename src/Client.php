@@ -3,8 +3,8 @@
 namespace ProductFlow\API;
 
 use GuzzleHttp\Client as GuzzleClient;
-use ProductFlow\API\Exceptions\ProductFlowException;
-use Psr\Http\Client\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\ClientInterface;
 
 class Client
 {
@@ -53,6 +53,7 @@ class Client
      * @param string $uri
      * @param  array  $options
      * @return array|string Array if the response was JSON, raw response body otherwise.
+     * @throws GuzzleException
      */
     public function request(string $method, string $uri, array $options = [])
     {
