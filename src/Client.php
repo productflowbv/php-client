@@ -3,7 +3,8 @@
 namespace ProductFlow\API;
 
 use GuzzleHttp\Client as GuzzleClient;
-use ProductFlow\API\Exceptions\ProductFlowException;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\ClientInterface;
 
 class Client
 {
@@ -35,10 +36,24 @@ class Client
     }
 
     /**
+     * Use own custom client. This can be useful for testing, additional logging, setting custom user agent etc.
+     *
+     * @param ClientInterface $client
+     * @return $this
+     */
+    public function useClient(ClientInterface $client) : self
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
      * @param string $method
      * @param string $uri
      * @param  array  $options
      * @return array|string Array if the response was JSON, raw response body otherwise.
+     * @throws GuzzleException
      */
     public function request(string $method, string $uri, array $options = [])
     {
