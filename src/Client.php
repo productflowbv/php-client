@@ -59,6 +59,7 @@ class Client
     {
         $response = $this->client->request($method, $uri, $options);
 
+        $response->getBody()->rewind();
         $contents = $response->getBody()->getContents();
 
         // fallback to application/json as this is, apart from 1 call, the return type
